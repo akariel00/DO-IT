@@ -30,7 +30,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dRe-cb-4bk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4Xp-BK-O7d"/>
+                            <constraint firstItem="dRe-cb-4bk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="B2z-eo-MAq"/>
+                            <constraint firstAttribute="trailing" secondItem="dRe-cb-4bk" secondAttribute="trailing" id="Ebz-qq-rZx"/>
+                            <constraint firstItem="dRe-cb-4bk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g2Z-oJ-yZ2"/>
                             <constraint firstItem="dRe-cb-4bk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hdT-Fe-nUw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dRe-cb-4bk" secondAttribute="bottom" id="tT8-5B-fvB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dRe-cb-4bk" secondAttribute="bottom" id="xTV-sO-Ftl"/>
                             <constraint firstAttribute="trailing" secondItem="dRe-cb-4bk" secondAttribute="trailing" id="y4w-QB-iYL"/>
                         </constraints>
@@ -46,29 +50,54 @@
                     <connections>
                         <outlet property="tableView" destination="dRe-cb-4bk" id="TGb-ar-9eo"/>
                         <segue destination="09W-Tj-Ddh" kind="show" identifier="addSegue" id="G8K-da-I7f"/>
+                        <segue destination="yku-T2-hoa" kind="show" identifier="selectTaskSegue" id="A0e-lJ-WSX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="775" y="37"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="NS9-oh-dZx">
+        <!--Complete Task View Controller-->
+        <scene sceneID="1sl-cC-2Fp">
             <objects>
-                <viewController id="UtB-cP-qmc" sceneMemberID="viewController">
+                <viewController id="yku-T2-hoa" customClass="CompleteTaskViewController" customModule="DO_IT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vuq-u5-LuI"/>
-                        <viewControllerLayoutGuide type="bottom" id="VNu-XF-tk3"/>
+                        <viewControllerLayoutGuide type="top" id="IkD-Ul-Vq4"/>
+                        <viewControllerLayoutGuide type="bottom" id="D3t-tA-h0I"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WF4-rH-766">
+                    <view key="view" contentMode="scaleToFill" id="CIV-0k-knd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5n-Z4-L2K">
+                                <rect key="frame" x="157" y="84" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHr-JM-mZO">
+                                <rect key="frame" x="154" y="139" width="67" height="30"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeTapped:" destination="yku-T2-hoa" eventType="touchUpInside" id="lmw-sZ-RFV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NHr-JM-mZO" firstAttribute="top" secondItem="D5n-Z4-L2K" secondAttribute="bottom" constant="25" id="G5t-7X-XLH"/>
+                            <constraint firstItem="D5n-Z4-L2K" firstAttribute="top" secondItem="IkD-Ul-Vq4" secondAttribute="bottom" constant="20" id="Uw1-zJ-1n1"/>
+                            <constraint firstItem="D5n-Z4-L2K" firstAttribute="centerX" secondItem="CIV-0k-knd" secondAttribute="centerX" id="aYy-g8-geN"/>
+                            <constraint firstItem="NHr-JM-mZO" firstAttribute="centerX" secondItem="CIV-0k-knd" secondAttribute="centerX" id="xNN-nn-CRu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="taskLabel" destination="D5n-Z4-L2K" id="j0C-gm-Q6h"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uM9-Kp-5c8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYv-p7-vT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="774" y="748"/>
+            <point key="canvasLocation" x="773.60000000000002" y="842.42878560719646"/>
         </scene>
         <!--Create Task View Controller-->
         <scene sceneID="ETN-XE-Dze">
@@ -83,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUw-J8-dxY">
-                                <rect key="frame" x="164.5" y="79" width="45" height="21"/>
+                                <rect key="frame" x="165" y="79" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -95,7 +124,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-lc-ANp">
-                                <rect key="frame" x="146" y="170" width="83.5" height="20.5"/>
+                                <rect key="frame" x="146" y="170" width="83.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
